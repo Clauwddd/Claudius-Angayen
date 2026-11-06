@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About Me | Claudius Angayen</title>
+<meta name="description" content="Personal info and achievements of Claudius Braylle O. Angayen, a first-year BS IT / CS student at CITCS.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/svg+xml" href="images/logo.svg">
+<link rel="stylesheet" href="css/style.css">
+<!-- Sets the saved theme before the page paints, so it never flashes the wrong color -->
+<script>
+  try { document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') === 'light' ? 'light' : 'dark'); } catch (e) {}
+</script>
+<script src="js/main.js" defer></script>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c3 2.5 9 2.5 12 0v-4.5"/></symbol>
+  <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12c0-4 3-6 7-6 0 4-3 6-7 6zM12 14c0-3-2-5-6-5 0 3 2 5 6 5z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+</svg>
+
+<!-- Graph-paper texture + soft glows -->
+<div class="graph-bg" aria-hidden="true"></div>
+<div class="glow g1" aria-hidden="true"></div>
+<div class="glow g2" aria-hidden="true"></div>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo" aria-label="Claudius Angayen, home">
+        <!-- Logo: a "C" with a terminal prompt inside -->
+        <svg class="logo-svg" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" style="stop-color: var(--accent)"/>
+              <stop offset="1" style="stop-color: var(--accent-2)"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="16" fill="url(#lg)"/>
+          <path d="M42 22.5A14 14 0 1 0 42 41.5" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+          <path d="M33 26.5L40 32L33 37.5" fill="none" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-word">Claudius<b>Angayen</b></span>
+      </a>
+      <div class="tabs" role="navigation" aria-label="Pages">
+        <a class="tab" href="index.html" data-view="home">Home</a>
+        <a class="tab" href="about.html" data-view="profile" aria-current="page">About me</a>
+      </div>
+      <div class="nav-right">
+        <a class="icon-btn" href="mailto:angayenkhan@gmail.com" aria-label="Email Claudius"><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch to light mode" title="Switch theme"></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div id="view-profile">
+  <div class="container">
+    <div class="page-head">
+      <span class="tag-label">// about.me</span>
+      <h2>Personal info and achievements</h2>
+      <p>A closer look at who I am and what I have done so far.</p>
+    </div>
+
+    <div class="profile-grid">
+      <section class="panel" aria-labelledby="pi-title">
+        <h3 class="section-title" id="pi-title"><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg> Personal info</h3>
+        <div class="id-row">
+          <div class="id-photo"><img src="images/photo.jpg" alt="Portrait of Claudius Braylle O. Angayen"></div>
+          <div>
+            <div class="id-name">Claudius Braylle O. Angayen</div>
+            <div class="id-role">1st year, BS IT / CS</div>
+          </div>
+        </div>
+        <ul class="facts">
+          <li><span class="k">College</span><span class="v">CITCS</span></li>
+          <li><span class="k">Course</span><span class="v">BS Information Technology / Computer Science</span></li>
+          <li><span class="k">Year level</span><span class="v">1st Year</span></li>
+          <li><span class="k">Senior high</span><span class="v">Benguet National High School</span></li>
+          <li><span class="k">Location</span><span class="v">La Trinidad, Benguet</span></li>
+          <li><span class="k">Languages</span><span class="v">Kankana-ey, Ilocano, Tagalog, English</span></li>
+          <li><span class="k">Interests</span><span class="v">Cycling, Cooking, Reading, Listening to music</span></li>
+          <li><span class="k">Email</span><span class="v">angayenkhan@gmail.com</span></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="ach-title">
+        <h3 class="section-title" id="ach-title"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg> Achievements</h3>
+        <div class="ach-list">
+          <article class="ach">
+            <div class="ach-year">2026</div>
+            <div><h4>Adivay ni Tayaw 2026 Champion</h4><span class="chip">Competition</span></div>
+          </article>
+          <article class="ach">
+            <div class="ach-year">2026</div>
+            <div><h4>BENECO 2026 Anniversary Cultural Performance Champion</h4><span class="chip">Competition</span></div>
+          </article>
+          <article class="ach">
+            <div class="ach-year">2025-2026</div>
+            <div><h4>With Honors</h4><span class="chip">Academic</span></div>
+          </article>
+          <article class="ach">
+            <div class="ach-year">2025-2026</div>
+            <div><h4>Loyalty Award</h4><span class="chip">Recognition</span></div>
+          </article>
+          <article class="ach">
+            <div class="ach-year">2025-2026</div>
+            <div><h4>Outstanding Learner in Work Immersion</h4><span class="chip">Work immersion</span></div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <div class="back-row">
+      <a href="index.html" class="btn btn-outline"><svg class="ico" aria-hidden="true"><use href="#i-back"/></svg> Back to home</a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="container">
+    &copy; <span id="year"></span> Claudius Braylle O. Angayen &middot; BS IT/CS, CITCS
+  </div>
+</footer>
+
+</body>
+</html>
