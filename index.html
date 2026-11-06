@@ -91,8 +91,12 @@
   nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 64px; }
   .logo { display: inline-flex; align-items: center; gap: 11px; font-weight: 800; font-size: 1.1rem; letter-spacing: .4px; min-width: 0; }
   .logo-svg { width: 36px; height: 36px; flex-shrink: 0; filter: drop-shadow(0 4px 10px rgba(80,110,255,.35)); }
-  .logo-word { white-space: nowrap; }
-  .logo-word b { color: var(--accent); font-weight: 800; }
+  .logo-word { display: flex; flex-direction: column; gap: 4px; line-height: 1; white-space: nowrap; }
+  .lw-top { font-size: .95rem; font-weight: 800; letter-spacing: .24em; text-transform: uppercase; }
+  .lw-bot {
+    font-size: .62rem; font-weight: 600; letter-spacing: .62em; text-transform: uppercase;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
   .nav-right { display: flex; gap: 10px; align-items: center; }
   .icon-btn {
     display: inline-grid; place-items: center;
@@ -292,7 +296,7 @@
           <path d="M42 22.5A14 14 0 1 0 42 41.5" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
           <path d="M33 26.5L40 32L33 37.5" fill="none" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span class="logo-word">Claudius<b>Angayen</b></span>
+        <span class="logo-word"><span class="lw-top">Claudius</span><span class="lw-bot">Angayen</span></span>
       </a>
       <div class="tabs" role="navigation" aria-label="Pages">
         <a class="tab" href="#home" data-view="home">Home</a>
