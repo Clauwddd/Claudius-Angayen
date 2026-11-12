@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Achievements | Claudius Angayen</title>
+<meta name="description" content="Certificates and recognitions of Claudius Braylle O. Angayen: academic honors, work immersion, school service, cultural events and seminars.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/svg+xml" href="images/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<!-- Sets the saved theme before the page paints, so it never flashes the wrong color -->
+<script>
+  try { document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') === 'light' ? 'light' : 'dark'); } catch (e) {}
+</script>
+<script src="js/main.js" defer></script>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.8 5.4-1.8 6 0M15 10h3M15 14h3"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<!-- Graph-paper texture + soft glows -->
+<div class="graph-bg" aria-hidden="true"></div>
+<div class="shape s1" aria-hidden="true"></div>
+<div class="shape s2" aria-hidden="true"></div>
+<div class="glow g1" aria-hidden="true"></div>
+<div class="glow g2" aria-hidden="true"></div>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo" aria-label="Claudius Angayen, home">
+        <!-- Logo: a "C" with a terminal prompt inside -->
+        <svg class="logo-svg" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" style="stop-color: var(--accent)"/>
+              <stop offset="1" style="stop-color: var(--accent-2)"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="16" fill="url(#lg)"/>
+          <path d="M42 22.5A14 14 0 1 0 42 41.5" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+          <path d="M33 26.5L40 32L33 37.5" fill="none" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="logo-word"><span class="lw-top">Claudius</span><span class="lw-bot">Angayen</span></span>
+      </a>
+      <div class="tabs" role="navigation" aria-label="Pages">
+        <a class="tab" href="index.html" data-view="home">Home</a>
+        <a class="tab" href="about.html" data-view="profile"><span class="tl-full">Personal information</span><span class="tl-short">About</span></a>
+        <a class="tab" href="achievements.html" data-view="achievements" aria-current="page">Achievements</a>
+      </div>
+      <div class="nav-right">
+        <a class="btn btn-primary btn-sm nav-cta" href="mailto:angayenkhan@gmail.com">Email me</a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch to light mode" title="Switch theme"></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div id="view-achievements">
+  <div class="container">
+    <div class="cat-tabs" role="tablist" aria-label="Achievement categories"><button type="button" role="tab" id="tab-honors" aria-controls="cat-honors" aria-selected="true">Academic honors <span class="cnt">5</span></button><button type="button" role="tab" id="tab-school" aria-controls="cat-school" aria-selected="false">School recognition <span class="cnt">2</span></button><button type="button" role="tab" id="tab-culture" aria-controls="cat-culture" aria-selected="false">Culture and community <span class="cnt">2</span></button><button type="button" role="tab" id="tab-seminars" aria-controls="cat-seminars" aria-selected="false">Seminars and workshops <span class="cnt">1</span></button></div>
+    <div class="panel panel-ach">
+<section class="cat" id="cat-honors" role="tabpanel" aria-labelledby="tab-honors"><h3 class="section-title"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg> Academic honors</h3><p class="cat-desc">With Honors recognitions from Grade 12 HUMSS-C, school year 2025&ndash;2026.</p><ul class="ach-grid"><li><button type="button" class="ach-card" data-full="images/achievements/honors-q1.jpg" data-title="First quarter, GWA 92%" data-sub="Grade 12 HUMSS-C, With Honors"><span class="ach-thumb"><img src="images/achievements/honors-q1.jpg" alt="Certificate of Recognition for a 92% GWA in the first quarter of school year 2025-2026" loading="lazy"></span><span class="ach-title">First quarter, GWA 92%</span><span class="ach-sub">Grade 12 HUMSS-C, With Honors</span></button></li><li><button type="button" class="ach-card" data-full="images/achievements/honors-q2.jpg" data-title="Second quarter, GWA 92%" data-sub="Grade 12 HUMSS-C, With Honors"><span class="ach-thumb"><img src="images/achievements/honors-q2.jpg" alt="Certificate of Recognition for a 92% GWA in the second quarter of school year 2025-2026" loading="lazy"></span><span class="ach-title">Second quarter, GWA 92%</span><span class="ach-sub">Grade 12 HUMSS-C, With Honors</span></button></li><li><button type="button" class="ach-card" data-full="images/achievements/honors-sem1.jpg" data-title="First semester, GWA 91%" data-sub="Grade 12 HUMSS-C, With Honors"><span class="ach-thumb"><img src="images/achievements/honors-sem1.jpg" alt="Certificate of Recognition for a 91% GWA in the first semester of school year 2025-2026" loading="lazy"></span><span class="ach-title">First semester, GWA 91%</span><span class="ach-sub">Grade 12 HUMSS-C, With Honors</span></button></li><li><button type="button" class="ach-card" data-full="images/achievements/honors-q4.jpg" data-title="Fourth quarter, 91% average" data-sub="Given March 15, 2026"><span class="ach-thumb"><img src="images/achievements/honors-q4.jpg" alt="Certificate of Recognition With Honors for a 91% average in the fourth quarter of school year 2025-2026" loading="lazy"></span><span class="ach-title">Fourth quarter, 91% average</span><span class="ach-sub">Given March 15, 2026</span></button></li><li><button type="button" class="ach-card" data-full="images/achievements/honors-school-year.jpg" data-title="School year average, 91%" data-sub="With Honors, March 31, 2026"><span class="ach-thumb"><img src="images/achievements/honors-school-year.jpg" alt="Certificate of Recognition With Honors for a 91% average for school year 2025-2026" loading="lazy"></span><span class="ach-title">School year average, 91%</span><span class="ach-sub">With Honors, March 31, 2026</span></button></li></ul></section>
+<section class="cat" id="cat-school" role="tabpanel" aria-labelledby="tab-school" hidden><h3 class="section-title"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg> School recognition</h3><p class="cat-desc">Awards from Benguet National High School, given March 31, 2026.</p><ul class="ach-grid"><li><button type="button" class="ach-card" data-full="images/achievements/work-immersion.jpg" data-title="Outstanding performance in work immersion" data-sub="Given March 31, 2026"><span class="ach-thumb"><img src="images/achievements/work-immersion.jpg" alt="Certificate of Recognition for outstanding performance in work immersion" loading="lazy"></span><span class="ach-title">Outstanding performance in work immersion</span><span class="ach-sub">Given March 31, 2026</span></button></li><li><button type="button" class="ach-card" data-full="images/achievements/loyalty.jpg" data-title="Certificate of Loyalty" data-sub="Six years of secondary education, March 31, 2026"><span class="ach-thumb"><img src="images/achievements/loyalty.jpg" alt="Certificate of Loyalty for completing six years of secondary education at Benguet National High School" loading="lazy"></span><span class="ach-title">Certificate of Loyalty</span><span class="ach-sub">Six years of secondary education, March 31, 2026</span></button></li></ul></section>
+<section class="cat" id="cat-culture" role="tabpanel" aria-labelledby="tab-culture" hidden><h3 class="section-title"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg> Culture and community</h3><p class="cat-desc">Indigenous peoples and cultural events from fall 2025.</p><ul class="ach-grid"><li><button type="button" class="ach-card" data-full="images/achievements/iped-month.jpg" data-title="IPED Month celebration 2025" data-sub="WATWAT Club, November 14, 2025"><span class="ach-thumb"><img src="images/achievements/iped-month.jpg" alt="Certificate of Recognition for the Indigenous Peoples Education Month celebration 2025" loading="lazy"></span><span class="ach-title">IPED Month celebration 2025</span><span class="ach-sub">WATWAT Club, November 14, 2025</span></button></li><li><button type="button" class="ach-card" data-full="images/achievements/beneco-cultural-dance.jpg" data-title="Talentadong BENECO, cultural dance" data-sub="Issued to Benguet National High School, October 5, 2025"><span class="ach-thumb"><img src="images/achievements/beneco-cultural-dance.jpg" alt="Certificate of Participation for the 52nd BENECO anniversary, student category cultural dance" loading="lazy"></span><span class="ach-title">Talentadong BENECO, cultural dance</span><span class="ach-sub">Issued to Benguet National High School, October 5, 2025</span></button></li></ul></section>
+<section class="cat" id="cat-seminars" role="tabpanel" aria-labelledby="tab-seminars" hidden><h3 class="section-title"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg> Seminars and workshops</h3><p class="cat-desc">Training programs attended.</p><ul class="ach-grid"><li><button type="button" class="ach-card" data-full="images/achievements/seminar-vice-free.jpg" data-title="Holistic Youth Empowerment seminar" data-sub="8 hours, November 29, 2025"><span class="ach-thumb"><img src="images/achievements/seminar-vice-free.jpg" alt="Certificate of Participation for the Holistic Youth Empowerment: Building a Vice-Free School Community seminar workshop" loading="lazy"></span><span class="ach-title">Holistic Youth Empowerment seminar</span><span class="ach-sub">8 hours, November 29, 2025</span></button></li></ul></section>
+    </div>
+  </div>
+</div>
+</main>
+
+<!-- Certificate viewer -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Certificate viewer" hidden>
+  <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Previous certificate">&lsaquo;</button>
+  <figure class="lb-fig">
+    <img id="lbImg" src="" alt="">
+    <figcaption><strong id="lbTitle"></strong><span id="lbSub"></span></figcaption>
+  </figure>
+  <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Next certificate">&rsaquo;</button>
+</div>
+
+
+<footer>
+  <div class="container">
+    &copy; <span id="year"></span> Claudius Braylle O. Angayen &middot; BS IT/CS, CITCS
+  </div>
+</footer>
+
+</body>
+</html>
