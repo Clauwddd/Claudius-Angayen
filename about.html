@@ -10,12 +10,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Sans:wght@400..700&display=swap">
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=4">
 <!-- Sets the saved theme before the page paints, so it never flashes the wrong color -->
 <script>
   try { document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') === 'light' ? 'light' : 'dark'); } catch (e) {}
 </script>
-<script src="js/main.js?v=3" defer></script>
+<script src="js/main.js?v=4" defer></script>
 </head>
 <body>
 
@@ -41,17 +41,13 @@
   <div class="container">
     <nav>
       <a href="index.html" class="logo" aria-label="Claudius Angayen, home">
-        <!-- Logo: a "C" with a terminal prompt inside -->
-        <svg class="logo-svg" viewBox="0 0 64 64" aria-hidden="true">
-          <defs>
-            <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" style="stop-color: var(--accent)"/>
-              <stop offset="1" style="stop-color: var(--accent-2)"/>
-            </linearGradient>
-          </defs>
-          <rect width="64" height="64" rx="16" fill="url(#lg)"/>
-          <path d="M42 22.5A14 14 0 1 0 42 41.5" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
-          <path d="M33 26.5L40 32L33 37.5" fill="none" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Logo: C++ -->
+        <svg class="logo-svg" viewBox="80 40 740 820" aria-hidden="true">
+          <defs><mask id="hx"><path d="M450 70L792 258V642L450 830L108 642V258Z" fill="#fff" stroke="#fff" stroke-width="30" stroke-linejoin="round"/></mask></defs>
+          <path d="M450 70L792 258V642L450 830L108 642V258Z" fill="#0180cd" stroke="#0180cd" stroke-width="30" stroke-linejoin="round"/>
+          <path d="M60 671L443 450L900 714V900H60Z" fill="#00549d" mask="url(#hx)"/>
+          <path d="M671 318.5A261 261 0 1 0 671 579.5L555.9 513A128 128 0 1 1 555.9 385Z" fill="#fff"/>
+          <g fill="#fff"><rect x="543" y="432" width="112" height="36"/><rect x="581" y="394" width="36" height="112"/><rect x="675" y="432" width="113" height="36"/><rect x="713" y="394" width="37" height="112"/></g>
         </svg>
         <span class="logo-word"><span class="lw-top">Claudius</span><span class="lw-bot">Angayen</span></span>
       </a>

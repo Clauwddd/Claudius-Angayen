@@ -87,7 +87,7 @@
   header { position: relative; z-index: 5; flex: none; }
   nav { display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 68px; }
   .logo { display: inline-flex; align-items: center; gap: 11px; min-width: 0; }
-  .logo-svg { width: 36px; height: 36px; flex-shrink: 0; filter: drop-shadow(0 4px 12px var(--btn-glow)); }
+  .logo-svg { width: 36px; height: 40px; flex-shrink: 0; filter: drop-shadow(0 4px 12px rgba(1,128,205,.35)); }
   .logo-word { display: flex; flex-direction: column; gap: 4px; line-height: 1; white-space: nowrap; }
   .lw-top { font-family: var(--font-display); font-size: .98rem; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; }
   .lw-bot { font-size: .62rem; font-weight: 700; letter-spacing: .62em; text-transform: uppercase; color: var(--accent); }
