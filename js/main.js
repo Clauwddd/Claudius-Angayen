@@ -164,9 +164,9 @@
     function open(card) {
       list = Array.prototype.slice.call(card.closest('.cat').querySelectorAll('.ach-card'));
       idx = list.indexOf(card); opener = card;
-      render(); lb.hidden = false; closeBtn.focus();
+      render(); lb.hidden = false; document.documentElement.classList.add('lb-open'); closeBtn.focus();
     }
-    function close() { lb.hidden = true; img.src = ''; if (opener) opener.focus(); }
+    function close() { lb.hidden = true; document.documentElement.classList.remove('lb-open'); img.src = ''; if (opener) opener.focus(); }
     function step(d) { if (list.length > 1) { idx = (idx + d + list.length) % list.length; render(); } }
 
     var cards = document.querySelectorAll('.ach-card');
@@ -190,6 +190,26 @@
   })();
   // ===== end achievements =====
 
+  // ===== Smooth page-to-page transition =====
+  (function () {
+    var html = document.documentElement;
+    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.addEventListener('pageshow', function (e) { if (e.persisted) html.classList.remove('leaving'); });
+    if (calm) return;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (a.target && a.target !== '_self') return;
+      var u;
+      try { u = new URL(a.href, location.href); } catch (err) { return; }
+      var web = u.protocol === 'http:' || u.protocol === 'https:' || u.protocol === 'file:';
+      if (!web || u.protocol !== location.protocol || u.host !== location.host || u.pathname === location.pathname) return;
+      e.preventDefault();
+      html.classList.add('leaving');
+      setTimeout(function () { location.href = a.href; }, 240);
+    });
+  })();
+  // ===== end page transition =====
   // ===== Footer year =====
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();

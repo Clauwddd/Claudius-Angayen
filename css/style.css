@@ -224,8 +224,6 @@
 
   .lightbox { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 16px max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); background: rgba(8,8,9,.97); }
   .lightbox[hidden] { display: none; }
-  .lightbox, .lightbox * { cursor: auto !important; }
-  .lightbox button { cursor: pointer !important; }
   .lb-fig { flex: 1; min-width: 0; max-height: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; color: #f3efe9; text-align: center; }
   .lb-fig img { max-width: 100%; max-height: calc(100vh - 110px); max-height: calc(100dvh - 110px); border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
   .lb-fig figcaption { display: flex; flex-direction: column; gap: 2px; font-size: .9rem; }
@@ -247,8 +245,8 @@
   }
 
   /* ===== CURSOR: plots the mouse path like a graph ===== */
-  #trail { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 60; pointer-events: none; }
-  .cur-dot, .cur-ring, .cur-coords { position: fixed; left: 0; top: 0; z-index: 61; pointer-events: none; opacity: 0; transition: opacity .25s; }
+  #trail { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 110; pointer-events: none; }
+  .cur-dot, .cur-ring, .cur-coords { position: fixed; left: 0; top: 0; z-index: 111; pointer-events: none; opacity: 0; transition: opacity .25s; }
   .has-cursor .cur-dot, .has-cursor .cur-ring, .has-cursor .cur-coords { opacity: 1; }
   .cur-dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent); }
   .cur-ring {
@@ -259,6 +257,16 @@
   .cur-ring.is-down { width: 24px; height: 24px; margin: -12px 0 0 -12px; }
   .cur-coords { margin: 20px 0 0 22px; font: 600 .66rem/1 ui-monospace, Consolas, monospace; letter-spacing: .04em; color: var(--accent); white-space: nowrap; }
   html.has-cursor, html.has-cursor * { cursor: none !important; }
+  /* While a certificate is open, show the normal system cursor (so the X and arrows are always easy to find and click) */
+  html.has-cursor.lb-open, html.has-cursor.lb-open * { cursor: auto !important; }
+  html.has-cursor.lb-open button { cursor: pointer !important; }
+  html.lb-open .cur-dot, html.lb-open .cur-ring, html.lb-open .cur-coords { opacity: 0 !important; }
+
+  /* ===== PAGE TRANSITIONS: content fades in on arrival and fades out when you leave ===== */
+  main { animation: page-in .5s cubic-bezier(.2,.7,.2,1) both; }
+  footer { animation: page-in .5s .05s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes page-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  html.leaving main, html.leaving footer { opacity: 0; transform: translateY(-8px); transition: opacity .24s ease, transform .24s ease; }
 
   footer { position: relative; z-index: 2; flex: none; text-align: center; padding-block: 9px; color: var(--muted); font-size: .8rem; line-height: 1.3; }
 
@@ -322,5 +330,7 @@
     .hero p:not(.typing) { display: none; }
   }
   @media (prefers-reduced-motion: reduce) {
+    main, footer { animation: none; }
+    html.leaving main, html.leaving footer { transition: none; }
     * { animation: none !important; transition: none !important; }
   }
