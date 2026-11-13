@@ -135,14 +135,28 @@
     var prev = document.getElementById('lbPrev'), next = document.getElementById('lbNext'), closeBtn = document.getElementById('lbClose');
     var list = [], idx = 0, opener = null;
 
+    // Wide screens show every category at once; small screens show one at a time (tabs)
+    var wide = window.matchMedia('(min-width: 1000px) and (min-height: 681px)');
     function showCat(btn) {
       for (var i = 0; i < tabs.length; i++) {
         var on = tabs[i] === btn;
         tabs[i].setAttribute('aria-selected', on ? 'true' : 'false');
-        document.getElementById(tabs[i].getAttribute('aria-controls')).hidden = !on;
+        document.getElementById(tabs[i].getAttribute('aria-controls')).hidden = wide.matches ? false : !on;
       }
-      btn.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     }
+    function current() {
+      for (var i = 0; i < tabs.length; i++) if (tabs[i].getAttribute('aria-selected') === 'true') return tabs[i];
+      return tabs[0];
+    }
+    if (wide.addEventListener) wide.addEventListener('change', function () { showCat(current()); });
+    else if (wide.addListener) wide.addListener(function () { showCat(current()); });
+
+    // If a certificate photo is missing, hide the broken-image icon instead of showing it
+    var thumbs = document.querySelectorAll('.ach-thumb img');
+    for (var m = 0; m < thumbs.length; m++) {
+      thumbs[m].addEventListener('error', function () { this.style.visibility = 'hidden'; });
+    }
+    showCat(current());
     for (var t = 0; t < tabs.length; t++) {
       tabs[t].addEventListener('click', function () { showCat(this); });
       tabs[t].addEventListener('keydown', function (e) {
