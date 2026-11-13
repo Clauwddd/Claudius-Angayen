@@ -243,15 +243,16 @@
   #view-achievements { flex: 1; min-height: 0; display: flex; flex-direction: column; padding-block: 4px 10px; }
   #view-achievements > .container { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 12px; }
   .page-title { flex: none; font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; line-height: 1.1; letter-spacing: -.015em; }
-  .sec-label { display: flex; align-items: center; gap: 12px; margin: 0 0 8px; font: 700 .7rem/1 ui-monospace, Consolas, monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  .sec-label { display: flex; align-items: center; gap: 12px; margin: 0 0 10px; font: 700 .7rem/1 ui-monospace, Consolas, monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
   .sec-label::after { content: ""; flex: 1; height: 1px; background: var(--border); }
   .edu { flex: none; }
   .edu-track { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .edu-step { display: flex; flex-direction: column; gap: 2px; padding: 8px 10px; background: var(--card); border: 1px solid var(--border); border-top: 3px solid var(--accent); border-radius: 10px; min-width: 0; }
+  .edu-step { display: flex; flex-direction: column; gap: 3px; padding: 10px 12px; background: var(--card); border: 1px solid var(--border); border-top: 3px solid var(--accent); border-radius: 10px; min-width: 0; }
   .edu-step.is-current { background: color-mix(in srgb, var(--accent) 9%, var(--card)); }
   .edu-lvl { font-family: var(--font-display); font-weight: 700; font-size: .9rem; line-height: 1.2; }
   .edu-school { color: var(--muted); font-size: .74rem; line-height: 1.25; }
-  .edu-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 3px; }
+  .edu-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 10px; margin-top: auto; padding-top: 9px; border-top: 1px dashed var(--border); }
+  .edu-school { margin-bottom: 9px; }
   .edu-pill { padding: 1px 8px; border: 1px solid var(--border); border-radius: 99px; font: 600 .62rem/1.5 ui-monospace, Consolas, monospace; color: var(--muted); white-space: nowrap; }
   .is-current .edu-pill { border-color: var(--accent); color: var(--accent); }
   .edu-yrs { font: 700 .7rem/1.3 ui-monospace, Consolas, monospace; color: var(--accent); white-space: nowrap; }
@@ -277,8 +278,9 @@
     #view-achievements > .container { gap: clamp(10px, 1.8vh, 16px); }
     .page-title { font-size: clamp(1.4rem, 3.4vh, 1.9rem); }
     .edu-track { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-    .edu-step { padding: clamp(8px, 1.5vh, 12px) 14px; gap: 3px; }
-    .edu-lvl { font-size: 1rem; } .edu-school { font-size: .82rem; } .edu-pill { font-size: .66rem; } .edu-yrs { font-size: .76rem; }
+    .edu-step { padding: clamp(12px, 2vh, 16px) 18px clamp(10px, 1.7vh, 14px); gap: 4px; }
+    .edu-lvl { font-size: 1.02rem; } .edu-school { font-size: .83rem; margin-bottom: clamp(8px, 1.4vh, 12px); } .edu-pill { font-size: .66rem; padding: 2px 10px; } .edu-yrs { font-size: .78rem; }
+    .edu-foot { padding-top: clamp(8px, 1.4vh, 11px); }
     .cat-tabs { display: none; }
     .ach-cols { overflow: hidden; padding: 0; display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); gap: 24px; }
     .cat, .col-side { min-height: 0; display: flex; flex-direction: column; }
