@@ -204,6 +204,47 @@
   })();
   // ===== end achievements =====
 
+  // ===== Family & Friends: photo viewer =====
+  (function () {
+    var tiles = document.querySelectorAll('.ff-tile');
+    if (!tiles.length) return;
+    var lb = document.getElementById('lightbox');
+    var img = document.getElementById('lbImg'), ttl = document.getElementById('lbTitle'), sub = document.getElementById('lbSub');
+    var prev = document.getElementById('lbPrev'), next = document.getElementById('lbNext'), closeBtn = document.getElementById('lbClose');
+    var list = Array.prototype.slice.call(tiles), idx = 0, opener = null;
+
+    function render() {
+      var t = list[idx];
+      img.src = t.getAttribute('data-full');
+      img.alt = t.querySelector('.ff-fg').alt;
+      ttl.textContent = t.getAttribute('data-title');
+      sub.textContent = t.getAttribute('data-sub');
+      prev.hidden = next.hidden = list.length < 2;
+    }
+    function open(tile) { idx = list.indexOf(tile); opener = tile; render(); lb.hidden = false; document.documentElement.classList.add('lb-open'); closeBtn.focus(); }
+    function close() { lb.hidden = true; document.documentElement.classList.remove('lb-open'); img.src = ''; if (opener) opener.focus(); }
+    function step(d) { idx = (idx + d + list.length) % list.length; render(); }
+
+    for (var i = 0; i < list.length; i++) list[i].addEventListener('click', function () { open(this); });
+    closeBtn.addEventListener('click', close);
+    prev.addEventListener('click', function () { step(-1); });
+    next.addEventListener('click', function () { step(1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') step(-1);
+      else if (e.key === 'ArrowRight') step(1);
+      else if (e.key === 'Tab') {
+        var f = [closeBtn, prev, next].filter(function (b) { return !b.hidden; });
+        var j = f.indexOf(document.activeElement);
+        e.preventDefault();
+        f[(j + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus();
+      }
+    });
+  })();
+  // ===== end family & friends =====
+
   // ===== Smooth page-to-page transition =====
   (function () {
     var html = document.documentElement;

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Family &amp; Friends | Claudius Angayen</title>
+<meta name="description" content="Family and friends of Claudius Braylle O. Angayen: the people who support him. Click any photo to zoom.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/svg+xml" href="images/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="css/style.css?v=10">
+<!-- Sets the saved theme before the page paints, so it never flashes the wrong color -->
+<script>
+  try { document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') === 'light' ? 'light' : 'dark'); } catch (e) {}
+</script>
+<script src="js/main.js?v=10" defer></script>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.6-1.8 5.4-1.8 6 0M15 10h3M15 14h3"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/></symbol>
+  <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<!-- Graph-paper texture + soft glows -->
+<div class="graph-bg" aria-hidden="true"></div>
+<div class="shape s1" aria-hidden="true"></div>
+<div class="shape s2" aria-hidden="true"></div>
+<div class="glow g1" aria-hidden="true"></div>
+<div class="glow g2" aria-hidden="true"></div>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="index.html" class="logo" aria-label="Claudius Angayen, home">
+        <!-- Logo: C++ -->
+        <svg class="logo-svg" viewBox="80 40 740 820" aria-hidden="true">
+          <defs><mask id="hx"><path d="M450 70L792 258V642L450 830L108 642V258Z" fill="#fff" stroke="#fff" stroke-width="30" stroke-linejoin="round"/></mask></defs>
+          <path d="M450 70L792 258V642L450 830L108 642V258Z" fill="#0180cd" stroke="#0180cd" stroke-width="30" stroke-linejoin="round"/>
+          <path d="M60 671L443 450L900 714V900H60Z" fill="#00549d" mask="url(#hx)"/>
+          <path d="M671 318.5A261 261 0 1 0 671 579.5L555.9 513A128 128 0 1 1 555.9 385Z" fill="#fff"/>
+          <g fill="#fff"><rect x="543" y="432" width="112" height="36"/><rect x="581" y="394" width="36" height="112"/><rect x="675" y="432" width="113" height="36"/><rect x="713" y="394" width="37" height="112"/></g>
+        </svg>
+        <span class="logo-word"><span class="lw-top">Claudius</span><span class="lw-bot">Angayen</span></span>
+      </a>
+      <div class="tabs" role="navigation" aria-label="Pages">
+        <a class="tab" href="index.html" data-view="home">Home</a>
+        <a class="tab" href="about.html" data-view="profile"><span class="tl-full">Personal information</span><span class="tl-short">About</span></a>
+        <a class="tab" href="achievements.html" data-view="achievements">Achievements</a>
+        <a class="tab" href="family-friends.html" data-view="family" aria-current="page"><span class="tl-full">Family &amp; Friends</span><span class="tl-short">Family</span></a>
+      </div>
+      <div class="nav-right">
+        <a class="btn btn-primary btn-sm nav-cta" href="mailto:angayenkhan@gmail.com">Email me</a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch to light mode" title="Switch theme"></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div id="view-ff">
+  <div class="container">
+    <div class="ff-head"><h2 class="page-title">Family &amp; Friends</h2><span class="zoom-hint"><svg class="ico" aria-hidden="true"><use href="#i-zoom"/></svg>Click any photo to zoom</span></div>
+    <p class="ff-sub">The people who support me.</p>
+    <div class="ff-wrap">
+      <section class="ff-sec" aria-labelledby="fam-h"><h3 class="sec-label" id="fam-h">Family</h3><ul class="ff-row ff-family"><li style="--ar:1.333"><button type="button" class="ff-tile" data-full="images/family-friends/family-apron.jpg" data-title="With family at home" data-sub="Family" title="With family at home"><img class="ff-bg" src="images/family-friends/family-apron.jpg" alt="" aria-hidden="true" loading="lazy"><img class="ff-fg" src="images/family-friends/family-apron.jpg" alt="Claudius with his arm around an older woman in a pink apron, standing in front of a wooden door" loading="lazy"><span class="ff-cap">With family at home</span></button></li><li style="--ar:0.75"><button type="button" class="ff-tile" data-full="images/family-friends/family-handshake.jpg" data-title="Handshake at home" data-sub="Family" title="Handshake at home"><img class="ff-bg" src="images/family-friends/family-handshake.jpg" alt="" aria-hidden="true" loading="lazy"><img class="ff-fg" src="images/family-friends/family-handshake.jpg" alt="Claudius shaking hands with a smiling man in a blue shirt in a home living area" loading="lazy"><span class="ff-cap">Handshake at home</span></button></li><li style="--ar:1.333"><button type="button" class="ff-tile" data-full="images/family-friends/family-selfie.jpg" data-title="Selfie at home" data-sub="Family" title="Selfie at home"><img class="ff-bg" src="images/family-friends/family-selfie.jpg" alt="" aria-hidden="true" loading="lazy"><img class="ff-fg" src="images/family-friends/family-selfie.jpg" alt="Claudius in a gray hoodie taking a selfie at home with two younger family members smiling behind him" loading="lazy"><span class="ff-cap">Selfie at home</span></button></li></ul></section>
+      <section class="ff-sec" aria-labelledby="fr-h"><h3 class="sec-label" id="fr-h">Friends</h3><ul class="ff-row ff-friends"><li style="--ar:0.714"><button type="button" class="ff-tile" data-full="images/family-friends/friends-photobooth.jpg" data-title="Photobooth with friends" data-sub="Friends" title="Photobooth with friends"><img class="ff-bg" src="images/family-friends/friends-photobooth.jpg" alt="" aria-hidden="true" loading="lazy"><img class="ff-fg" src="images/family-friends/friends-photobooth.jpg" alt="Four friends posing in a photobooth in front of a red curtain, one holding a toy phone" loading="lazy"><span class="ff-cap">Photobooth with friends</span></button></li><li style="--ar:0.75"><button type="button" class="ff-tile" data-full="images/family-friends/friends-night.jpg" data-title="After school with the boys" data-sub="Friends" title="After school with the boys"><img class="ff-bg" src="images/family-friends/friends-night.jpg" alt="" aria-hidden="true" loading="lazy"><img class="ff-fg" src="images/family-friends/friends-night.jpg" alt="Claudius taking a selfie while sitting on a curb at night with three friends in school uniform" loading="lazy"><span class="ff-cap">After school with the boys</span></button></li><li style="--ar:0.75"><button type="button" class="ff-tile" data-full="images/family-friends/friends-outing.jpg" data-title="Out with the boys" data-sub="Friends" title="Out with the boys"><img class="ff-bg" src="images/family-friends/friends-outing.jpg" alt="" aria-hidden="true" loading="lazy"><img class="ff-fg" src="images/family-friends/friends-outing.jpg" alt="Five friends in a group selfie on a grassy lawn with a Ferris wheel behind them" loading="lazy"><span class="ff-cap">Out with the boys</span></button></li></ul></section>
+    </div>
+  </div>
+</div>
+</main>
+
+<!-- Photo viewer -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo">&lsaquo;</button>
+  <figure class="lb-fig">
+    <img id="lbImg" src="" alt="">
+    <figcaption><strong id="lbTitle"></strong><span id="lbSub"></span></figcaption>
+  </figure>
+  <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Next photo">&rsaquo;</button>
+</div>
+
+
+<footer>
+  <div class="container foot">
+    <a class="pg" href="achievements.html">&larr; Previous</a>
+    <span class="foot-mid"><span class="foot-count">4 / 4</span><span class="foot-copy"> &middot; &copy; <span id="year"></span> Claudius Braylle O. Angayen &middot; BS IT/CS, CITCS</span></span>
+    <span></span>
+  </div>
+</footer>
+
+</body>
+</html>
