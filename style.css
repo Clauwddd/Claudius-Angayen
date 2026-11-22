@@ -325,8 +325,8 @@
   .ff-fg { object-fit: contain; }
   .ff-cap {
     position: absolute; left: 10px; bottom: 10px; max-width: calc(100% - 20px); padding: 4px 11px;
-    border-radius: 99px; background: rgba(8,8,9,.72); border: 1px solid rgba(255,255,255,.16);
-    font: 600 .72rem/1.4 var(--font-body); color: #f3efe9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    border-radius: 14px; background: rgba(8,8,9,.72); border: 1px solid rgba(255,255,255,.16); text-align: left;
+    font: 600 .72rem/1.35 var(--font-body); color: #f3efe9;
     -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   }
   .ff-tile:hover .ff-cap { background: var(--accent); border-color: var(--accent); }

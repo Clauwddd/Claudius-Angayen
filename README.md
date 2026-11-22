@@ -27,7 +27,7 @@ Each page fits one screen, so the page itself never scrolls. Use the Previous / 
 - Photo: replace `images/photo.jpg` with a new file of the same name.
 
 ## After you change CSS or JS
-Browsers keep old copies. Change the `?v=10` at the end of the `style.css` and `main.js` links in all four HTML pages (for example to `?v=11`) so everyone gets the new files.
+Browsers keep old copies. Change the `?v=11` at the end of the `style.css` and `main.js` links in all four HTML pages (for example to `?v=12`) so everyone gets the new files.
 
 ## Hosting
 Turn on GitHub Pages in Settings, Pages, then choose the `main` branch and `/ (root)`.
