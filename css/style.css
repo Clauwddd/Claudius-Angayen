@@ -99,6 +99,15 @@
   .tab[aria-current="page"] { color: var(--accent); }
   .tab[aria-current="page"]::after, .tab:hover::after { transform: scaleX(1); }
   .tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+  .home-btn {
+    flex: none; display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+    border: 1.5px solid var(--border); background: var(--card); color: var(--muted);
+    transition: transform .2s, border-color .2s, color .2s, background .2s;
+  }
+  .home-btn .ico { width: 18px; height: 18px; vertical-align: 0; }
+  .home-btn:hover { transform: translateY(-2px); border-color: var(--accent); color: var(--accent); }
+  .home-btn[aria-current="page"] { border-color: var(--accent); color: var(--accent); background: var(--bg-soft); }
+  .home-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .nav-right { display: flex; gap: 10px; align-items: center; }
   .icon-btn {
     display: inline-grid; place-items: center;
@@ -170,7 +179,7 @@
   }
 
   /* ===== PAGE 2: PERSONAL INFORMATION ===== */
-  #view-profile { flex: 1; min-height: 0; display: flex; flex-direction: column; padding-block: 6px 12px; }
+  #view-profile { overflow: hidden; flex: 1; min-height: 0; display: flex; flex-direction: column; padding-block: 6px 12px; }
   #view-profile > .container { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px; }
   .seg { display: none; gap: 4px; padding: 4px; background: var(--card); border: 1px solid var(--border); border-radius: var(--r); flex: none; }
   .seg button {
@@ -180,7 +189,7 @@
   .seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
   .profile-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 20px; align-items: stretch; }
   .panel {
-    min-height: 0; overflow: auto; display: flex; flex-direction: column;
+    min-height: 0; overflow: hidden; display: flex; flex-direction: column;
     background: var(--card); border: 1px solid var(--border); border-radius: 14px;
     padding: clamp(12px, 2.4vh, 22px); box-shadow: var(--shadow);
   }
@@ -464,6 +473,7 @@
     .tab { font-size: .84rem; padding-inline: 0; }
     .logo-svg { width: 30px; height: 34px; }
     .icon-btn { width: 36px; height: 36px; }
+    .home-btn { width: 36px; height: 36px; }
     .nav-right { gap: 8px; }
   }
   /* Short screens: drop the least important bits so nothing needs scrolling */
