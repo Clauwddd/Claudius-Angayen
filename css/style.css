@@ -320,7 +320,7 @@
   .ff-tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .ff-bg, .ff-fg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
   .ff-bg { object-fit: cover; filter: blur(22px) saturate(1.15) brightness(.7); transform: scale(1.25); }
-  .ff-fg { object-fit: contain; }
+  .ff-fg { object-fit: cover; }
   .ff-cap {
     position: absolute; left: 10px; bottom: 10px; max-width: calc(100% - 20px); padding: 4px 11px;
     border-radius: 14px; background: rgba(8,8,9,.72); border: 1px solid rgba(255,255,255,.16); text-align: left;
@@ -329,22 +329,22 @@
   }
   .ff-tile:hover .ff-cap { background: var(--accent); border-color: var(--accent); }
 
-  /* A lone photo keeps its own proportions instead of stretching across the row */
-  @media (min-width: 761px) and (min-height: 561px) {
-    .ff-row:has(> li:only-child) { justify-content: center; }
-    .ff-row > li:only-child { flex: 0 0 auto; aspect-ratio: var(--ar, 1); }
-    .ff-row > li:only-child .ff-cap { top: 10px; bottom: auto; }
-  }
+  /* One grid, no gaps: every photo fills its tile edge to edge */
+  .ff-grid { flex: 1; min-height: 0; list-style: none; display: grid; gap: clamp(8px, 1.2vw, 14px);
+    grid-template-columns: 26fr 38fr 36fr; grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); }
+  .ff-grid > li { min-width: 0; min-height: 0; display: flex; }
+  .ff-grid .g-a { grid-column: 1; grid-row: 1; }
+  .ff-grid .g-b { grid-column: 1; grid-row: 2; }
+  .ff-grid .g-c { grid-column: 2; grid-row: 1 / span 2; }
+  .ff-grid .g-d { grid-column: 3; grid-row: 1 / span 2; }
+  .ff-grid .ff-fg { object-position: center 25%; }
 
   /* Phones and short screens: two columns, the page scrolls inside its own area */
   @media (max-width: 760px), (max-height: 560px) {
     .ff-wrap { flex: 1 1 0; overflow: auto; display: block; padding-right: 2px; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
-    .ff-sec { display: block; margin-bottom: 14px; }
-    .ff-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .ff-row > li { display: block; }
+    .ff-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; grid-auto-rows: auto; }
+    .ff-grid > li, .ff-grid .g-a, .ff-grid .g-b, .ff-grid .g-c, .ff-grid .g-d { grid-column: auto; grid-row: auto; display: block; }
     .ff-tile { display: block; width: 100%; aspect-ratio: 3 / 4; }
-    .ff-row > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
-    .ff-row > li:last-child:nth-child(odd) .ff-tile { aspect-ratio: 4 / 3; }
     .ff-head .zoom-hint { display: none; }
   }
 
