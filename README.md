@@ -1,6 +1,6 @@
 # Claudius Angayen | Portfolio
 
-Personal portfolio of Claudius Braylle O. Angayen, a first-year BS IT / CS student at CITCS.
+Personal portfolio of Claudius Braylle O. Angayen, a first-year BS IT student at CITCS.
 
 ## Pages
 - `index.html` : home page (1 / 4)

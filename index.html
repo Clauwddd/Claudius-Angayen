@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Claudius Angayen | Portfolio</title>
-<meta name="description" content="Portfolio of Claudius Braylle O. Angayen, a first-year Information Technology / Computer Science student at CITCS.">
+<meta name="description" content="Portfolio of Claudius Braylle O. Angayen, a first-year Information Technology student at CITCS.">
 <meta name="theme-color" content="#000000">
 <link rel="icon" type="image/svg+xml" href="images/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Sans:wght@400..700&display=swap">
-<link rel="stylesheet" href="css/style.css?v=13">
+<link rel="stylesheet" href="css/style.css?v=14">
 <!-- Sets the saved theme before the page paints, so it never flashes the wrong color -->
 <script>
   try { document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') === 'light' ? 'light' : 'dark'); } catch (e) {}
@@ -41,6 +41,7 @@
 <header>
   <div class="container">
     <nav>
+      <div class="nav-left">
       <a href="index.html" class="logo" aria-label="Claudius Angayen, home">
         <!-- Logo: C++ -->
         <svg class="logo-svg" viewBox="80 40 740 820" aria-hidden="true">
@@ -52,8 +53,9 @@
         </svg>
         <span class="logo-word"><span class="lw-top">Claudius</span><span class="lw-bot">Angayen</span></span>
       </a>
+      <a class="tab" href="index.html" data-view="home" aria-current="page">Home</a>
+      </div>
       <div class="tabs" role="navigation" aria-label="Pages">
-        <a class="tab" href="index.html" data-view="home" aria-current="page">Home</a>
         <a class="tab" href="about.html" data-view="profile"><span class="tl-full">Personal information</span><span class="tl-short">About</span></a>
         <a class="tab" href="achievements.html" data-view="achievements">Achievements</a>
         <a class="tab" href="family-friends.html" data-view="family"><span class="tl-full">Family &amp; Friends</span><span class="tl-short">Family</span></a>
@@ -77,7 +79,7 @@
         </h1>
         <p>
           I'm just getting started in tech and loving every bug I squash.
-          I'm studying <strong>BS Information Technology / Computer Science</strong>
+          I'm studying <strong>BS Information Technology</strong>
           and building one small project at a time.
         </p>
         <p class="typing">
@@ -111,7 +113,7 @@
 <footer>
   <div class="container foot">
     <span></span>
-    <span class="foot-mid"><span class="foot-count">1 / 4</span><span class="foot-copy"> &middot; &copy; <span id="year"></span> Claudius Braylle O. Angayen &middot; BS IT/CS, CITCS</span></span>
+    <span class="foot-mid"><span class="foot-count">1 / 4</span><span class="foot-copy"> &middot; &copy; <span id="year"></span> Claudius Braylle O. Angayen &middot; BS IT, CITCS</span></span>
     <a class="pg pg-next" href="about.html">Next &rarr;</a>
   </div>
 </footer>
