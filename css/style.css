@@ -1,20 +1,20 @@
 /* Claudius Angayen | Portfolio styles. Dark by default; data-theme="light" on <html> switches to light. */
 
-/* Layout: one screen, no scrolling. Charcoal base with one orange accent. Text-link nav, big role line, stats strip, portrait in a dial-style circle. */
+/* Layout: one screen, no scrolling. Charcoal base with one navy accent. Text-link nav, big role line, stats strip, full portrait in a framed card. */
   :root {
     --bg: #0c0c0d;
     --bg-soft: #121214;
     --card: #161618;
     --text: #f3efe9;
     --muted: #9b958d;
-    --accent: #ff6a00;
-    --accent-2: #ffa24a;
+    --accent: #4a6fd6;
+    --accent-2: #8fa8f0;
     --border: #28282d;
     --shape: rgba(255,255,255,.028);
-    --grid-minor: rgba(255,106,0,.03);
-    --grid-major: rgba(255,106,0,.075);
+    --grid-minor: rgba(74,111,214,.04);
+    --grid-major: rgba(74,111,214,.09);
     --glow-op: .12;
-    --btn-glow: rgba(255,106,0,.30);
+    --btn-glow: rgba(74,111,214,.32);
     --shadow: 0 12px 30px rgba(0,0,0,.6);
     --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, -apple-system, sans-serif;
     --font-body: "DM Sans", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
@@ -27,14 +27,14 @@
     --card: #ffffff;
     --text: #1d1915;
     --muted: #6c6459;
-    --accent: #e25a00;
-    --accent-2: #f08a2c;
+    --accent: #14307a;
+    --accent-2: #2f52b0;
     --border: #e4dac9;
     --shape: rgba(0,0,0,.035);
-    --grid-minor: rgba(226,90,0,.05);
-    --grid-major: rgba(226,90,0,.12);
+    --grid-minor: rgba(20,48,122,.05);
+    --grid-major: rgba(20,48,122,.12);
     --glow-op: .2;
-    --btn-glow: rgba(226,90,0,.25);
+    --btn-glow: rgba(20,48,122,.25);
     --shadow: 0 12px 30px rgba(60,40,10,.12);
     color-scheme: light;
   }
@@ -151,19 +151,17 @@
   .stats b { display: block; font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: clamp(.95rem, 2.4vh, 1.15rem); line-height: 1.25; }
   .stats span { display: block; font-size: .76rem; letter-spacing: .04em; color: var(--muted); }
 
-  /* Portrait disk with an orbit ring */
+  /* Full portrait in a framed card (the whole photo is shown, nothing cropped) */
   .avatar-wrap { display: flex; justify-content: center; }
   .disk-wrap { position: relative; padding: 16px; margin-bottom: 18px; max-width: 100%; }
   .disk {
-    position: relative; width: min(52vh, 420px); max-width: 100%; aspect-ratio: 1; border-radius: 50%;
-    background: radial-gradient(circle at 50% 35%, var(--card), var(--bg-soft));
-    border: 1px solid var(--border); display: grid; place-items: center; box-shadow: var(--shadow);
+    position: relative; height: min(64vh, 560px); max-width: 100%; aspect-ratio: 1506 / 2047; border-radius: 18px;
+    background: var(--bg-soft); border: 1px solid var(--border); box-shadow: var(--shadow);
   }
-  .orbit { position: absolute; inset: -14px; border-radius: 50%; border: 2px dashed var(--border); pointer-events: none; }
-  .orbit::after { content: ""; position: absolute; inset: -2px; border-radius: 50%; border: 2px solid transparent; border-top-color: var(--accent); border-right-color: var(--accent-2); animation: spin 14s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .photo { width: 86%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent); background: var(--bg-soft); }
-  .photo img, .id-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 16%; display: block; }
+  .orbit { position: absolute; inset: -12px; border-radius: 26px; border: 2px dashed var(--border); pointer-events: none; }
+  .orbit::after { content: ""; position: absolute; inset: -2px; border-radius: 26px; border: 2px solid transparent; border-top-color: var(--accent); border-left-color: var(--accent-2); }
+  .photo { width: 100%; height: 100%; border-radius: 18px; overflow: hidden; box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); background: var(--bg-soft); }
+  .photo img, .id-photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
   .coords {
     position: absolute; left: 50%; bottom: -2px; transform: translateX(-50%); white-space: nowrap;
     font-family: ui-monospace, Consolas, monospace; font-size: .74rem; color: var(--accent);
@@ -188,7 +186,7 @@
   .section-title { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 1.05rem; margin-bottom: clamp(8px, 1.6vh, 14px); flex: none; }
   .section-title .ico { color: var(--accent); width: 20px; height: 20px; }
   .id-row { display: flex; gap: 16px; align-items: center; padding-bottom: clamp(8px, 1.6vh, 14px); border-bottom: 1px dashed var(--border); flex: none; }
-  .id-photo { width: 92px; height: 92px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: var(--bg-soft); box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); }
+  .id-photo { width: 69px; height: 92px; border-radius: 10px; overflow: hidden; flex-shrink: 0; background: var(--bg-soft); box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); }
   .id-name { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; line-height: 1.3; overflow-wrap: anywhere; }
   .id-role { color: var(--accent); font-size: .85rem; margin-top: 2px; font-weight: 600; }
   .bio { color: var(--muted); font-size: clamp(.9rem, 2.1vh, 1rem); line-height: 1.6; margin-top: clamp(8px, 1.8vh, 16px); }
@@ -331,6 +329,13 @@
   }
   .ff-tile:hover .ff-cap { background: var(--accent); border-color: var(--accent); }
 
+  /* A lone photo keeps its own proportions instead of stretching across the row */
+  @media (min-width: 761px) and (min-height: 561px) {
+    .ff-row:has(> li:only-child) { justify-content: center; }
+    .ff-row > li:only-child { flex: 0 0 auto; aspect-ratio: var(--ar, 1); }
+    .ff-row > li:only-child .ff-cap { top: 10px; bottom: auto; }
+  }
+
   /* Phones and short screens: two columns, the page scrolls inside its own area */
   @media (max-width: 760px), (max-height: 560px) {
     .ff-wrap { flex: 1 1 0; overflow: auto; display: block; padding-right: 2px; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
@@ -396,10 +401,11 @@
     .hero-grid { grid-template-columns: 1fr; gap: 10px; }
     .avatar-wrap { order: -1; }
     .disk-wrap { padding: 10px; margin-bottom: 4px; }
-    .disk { width: min(20vh, 190px); }
+    .disk { height: min(24vh, 230px); }
     .stats span { display: none; }
     .stats > div { padding: 7px 10px; }
-    .orbit { inset: -9px; }
+    .orbit { inset: -9px; border-radius: 22px; }
+    .orbit::after { border-radius: 22px; }
     .coords { display: none; }
     .copy { gap: clamp(6px, 1.4vh, 12px); }
     .hero h1 .role { font-size: clamp(1.7rem, min(8vw, 5.4vh), 2.6rem); }

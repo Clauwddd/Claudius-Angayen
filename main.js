@@ -73,7 +73,7 @@
     size();
     window.addEventListener('resize', size);
 
-    function accent() { return getComputedStyle(html).getPropertyValue('--accent').trim() || '#ff6a00'; }
+    function accent() { return getComputedStyle(html).getPropertyValue('--accent').trim() || '#4a6fd6'; }
     function at(el, x, y) { el.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0)'; }
 
     function frame(now) {

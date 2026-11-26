@@ -13,7 +13,7 @@ Each page fits one screen, so the page itself never scrolls. Use the Previous / 
 ## Folders
 - `css/style.css` : all styling, including the dark and light themes
 - `js/main.js` : theme toggle, typing effect, phone switcher, cursor effect, certificate viewer, page transitions
-- `images/` : `photo.jpg` and `logo.svg`
+- `images/` : `photo.jpg` (full portrait) and `logo.svg`
 - `images/achievements/` : certificate photos
 - `images/family-friends/` : photos for the Family & Friends page
 
