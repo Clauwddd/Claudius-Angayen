@@ -268,4 +268,23 @@
   // ===== Footer year =====
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
+
+  // ===== Personal information page: shrink text a little if a panel would otherwise need scrolling =====
+  (function () {
+    var panels = document.querySelectorAll('.panel');
+    if (!panels.length) return;
+    function fitPanels() {
+      for (var i = 0; i < panels.length; i++) {
+        var p = panels[i], f = 1;
+        p.style.removeProperty('--fit');
+        if (!p.offsetParent) continue;
+        while (p.scrollHeight > p.clientHeight + 1 && f > 0.55) { f -= 0.04; p.style.setProperty('--fit', f.toFixed(2)); }
+      }
+    }
+    fitPanels();
+    window.addEventListener('resize', fitPanels);
+    window.addEventListener('load', fitPanels);
+    var seg = document.querySelectorAll('.seg button');
+    for (var s = 0; s < seg.length; s++) seg[s].addEventListener('click', function () { setTimeout(fitPanels, 0); });
+  })();
 })();
