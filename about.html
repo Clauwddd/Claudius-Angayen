@@ -10,14 +10,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Sans:wght@400..700&display=swap">
-<link rel="stylesheet" href="css/style.css?v=20">
+<link rel="stylesheet" href="css/style.css?v=21">
 <!-- Sets the saved theme before the page paints, so it never flashes the wrong color -->
 <script>
   try { document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') === 'light' ? 'light' : 'dark'); } catch (e) {}
 </script>
 <script src="js/main.js?v=14" defer></script>
 </head>
-<body class="page-about">
+<body class="page-info">
 
 <!-- Icon sprite -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -30,32 +30,32 @@
   <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol>
 </svg>
 
-<!-- Blueprint background: graph paper, glows, crosshairs and arcs -->
+<!-- Graph-paper texture + soft glows -->
 <div class="graph-bg" aria-hidden="true"></div>
+<div class="shape s1" aria-hidden="true"></div>
+<div class="shape s2" aria-hidden="true"></div>
 <div class="glow g1" aria-hidden="true"></div>
 <div class="glow g2" aria-hidden="true"></div>
-<svg class="bp-decor" viewBox="0 0 400 800" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
-  <g fill="none" stroke="currentColor" stroke-width="1">
-    <circle cx="400" cy="400" r="330" opacity=".5"/>
-    <circle cx="400" cy="400" r="270" opacity=".3" stroke-dasharray="2 6"/>
-    <circle cx="400" cy="400" r="200" opacity=".25"/>
-  </g>
-  <g stroke="currentColor" stroke-width="1.4" opacity=".7">
-    <path d="M300 62v18M291 71h18M368 62v18M359 71h18"/>
-    <path d="M300 195v18M291 204h18M368 195v18M359 204h18"/>
-    <path d="M300 327v18M291 336h18M368 327v18M359 336h18"/>
-    <path d="M300 458v18M291 467h18M368 458v18M359 467h18"/>
-  </g>
-</svg>
 
 <header>
   <div class="container">
     <nav>
       <div class="nav-left">
-        <a class="home-pill" href="index.html" aria-label="Home"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg><span>Home</span></a>
+      <a href="index.html" class="logo" aria-label="Claudius Angayen, home">
+        <!-- Logo: C++ -->
+        <svg class="logo-svg" viewBox="80 40 740 820" aria-hidden="true">
+          <defs><mask id="hx"><path d="M450 70L792 258V642L450 830L108 642V258Z" fill="#fff" stroke="#fff" stroke-width="30" stroke-linejoin="round"/></mask></defs>
+          <path d="M450 70L792 258V642L450 830L108 642V258Z" fill="#0180cd" stroke="#0180cd" stroke-width="30" stroke-linejoin="round"/>
+          <path d="M60 671L443 450L900 714V900H60Z" fill="#00549d" mask="url(#hx)"/>
+          <path d="M671 318.5A261 261 0 1 0 671 579.5L555.9 513A128 128 0 1 1 555.9 385Z" fill="#fff"/>
+          <g fill="#fff"><rect x="543" y="432" width="112" height="36"/><rect x="581" y="394" width="36" height="112"/><rect x="675" y="432" width="113" height="36"/><rect x="713" y="394" width="37" height="112"/></g>
+        </svg>
+        <span class="logo-word"><span class="lw-top">Claudius</span><span class="lw-bot">Angayen</span></span>
+      </a>
+      <a class="home-btn" href="index.html" aria-label="Home" title="Home"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg></a>
       </div>
       <div class="tabs" role="navigation" aria-label="Pages">
-        <a class="tab" href="about.html" data-view="profile" aria-current="page"><span class="tl-full">Personal Info</span><span class="tl-short">About</span></a>
+        <a class="tab" href="about.html" data-view="profile" aria-current="page"><span class="tl-full">Personal information</span><span class="tl-short">About</span></a>
         <a class="tab" href="achievements.html" data-view="achievements">Achievements</a>
         <a class="tab" href="family-friends.html" data-view="family"><span class="tl-full">Family &amp; Friends</span><span class="tl-short">Family</span></a>
       </div>
@@ -69,7 +69,7 @@
 <main>
 <div id="view-profile">
   <div class="container">
-    <div class="bp-frame">
+    <div class="pi-stack">
 
       <!-- Card 1: identity -->
       <section class="pi-card" aria-labelledby="pi-name">
